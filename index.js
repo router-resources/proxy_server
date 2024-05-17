@@ -85,6 +85,21 @@ app.get('/exchange', async (req, res) => {
 });
 
 
+app.get('/kucoin', async (req, res) => {
+
+    fetch(`http://localhost:${PORT}/proxy?url=https://api.kucoin.com/api/v1/market/stats?symbol=ROUTE-USDT`)
+    .then(response => response.json())
+    .then(data => {
+        // Replace the global object with the fetched object
+      res.send(data)
+
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+    });
+
+    });
+
 
 
 const fetchData = () => {
