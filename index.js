@@ -29,6 +29,10 @@ app.get('/hello', async (req, res) => {
     res.send('Hare Krishna');
 });
 
+app.get('/good', async (req, res) => {
+    res.send('day');
+});
+
 app.get('/proxy', async (req, res) => {
     try {
         const url = req.query.url;
